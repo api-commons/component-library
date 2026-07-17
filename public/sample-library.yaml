@@ -1,0 +1,75 @@
+version: "1.0"
+models:
+  - name: User
+    version: "1.0.0"
+    owner: team-identity
+    description: A platform user account.
+    schema:
+      type: object
+      description: A platform user.
+      required: [id, email, name, legacyId]
+      properties:
+        id: { type: string, format: uuid }
+        legacyId: { type: string }
+        email: { type: string, format: email }
+        name: { type: string }
+        age: { type: [integer, "null"] }
+        status: { type: string, enum: [active, invited, disabled] }
+        createdAt: { type: string, format: date-time }
+
+  - name: User
+    version: "2.0.0"
+    owner: team-identity
+    description: User account, v2 — legacyId dropped, contact + lifecycle tightened.
+    schema:
+      type: object
+      description: A platform user account with contact and lifecycle fields.
+      required: [id, email, name]
+      properties:
+        id: { type: string, format: uuid }
+        email: { type: string, format: email }
+        name: { type: string }
+        age: { type: integer }
+        status: { type: string, enum: [active, disabled] }
+        phone: { type: string }
+        createdAt: { type: string, format: date-time }
+
+  - name: Address
+    version: "1.0.0"
+    owner: team-platform
+    description: A postal address.
+    schema:
+      type: object
+      required: [line1, city, country]
+      properties:
+        line1: { type: string }
+        line2: { type: string }
+        city: { type: string }
+        region: { type: string }
+        postalCode: { type: string }
+        country: { type: string }
+
+  - name: Money
+    version: "1.0.0"
+    owner: team-billing
+    description: A monetary amount in minor units with an ISO-4217 currency.
+    schema:
+      type: object
+      required: [amount, currency]
+      properties:
+        amount: { type: string, description: Decimal string, e.g. "12.50" }
+        currency: { type: string, minLength: 3, maxLength: 3 }
+
+  - name: Error
+    version: "1.0.0"
+    owner: team-platform
+    description: A problem response.
+    schema:
+      type: object
+      required: [code, message]
+      properties:
+        code: { type: string }
+        message: { type: string }
+        details:
+          type: array
+          items: { type: string }

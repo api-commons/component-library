@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Model Library — a versioned, reusable component library for API design governance</title>
+    <meta name="description" content="Author or import a versioned library of reusable named schemas, see which OpenAPI specs consume each model, and classify a version bump as breaking or non-breaking across every consumer — plus a drift detector that surfaces near-duplicate model variants. Runs entirely in your browser." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Google tag (gtag.js) — API Commons -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WNSPT4B4S8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WNSPT4B4S8');
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <strong>Model Library</strong>
+        <span class="tag">library.apicommons.org</span>
+      </div>
+      <nav>
+        <a href="#" id="nav-about" title="What a versioned model library is">About</a>
+        <a href="https://apis.io" target="_blank" rel="noopener">APIs.io</a>
+        <a href="https://apicommons.org" target="_blank" rel="noopener">API Commons</a>
+        <a href="https://github.com/api-commons/component-library" target="_blank" rel="noopener">GitHub</a>
+        <button id="engage-ae" class="engage-btn" type="button" title="Work with API Evangelist on API design governance">Get help</button>
+      </nav>
+    </header>
+    <!-- Laneworks ad network (ads.laneworks.net) -->
+    <script async src="https://ads.laneworks.net/embed.js"></script>
+    <div data-laneworks-ad="top-banner"></div>
+
+
+    <div class="toolbar">
+      <button class="measure-btn" id="analyze" type="button">Analyze ▸</button>
+      <button class="ghost-btn" id="load-sample" type="button">Load sample</button>
+      <button class="ghost-btn" id="dl-library" type="button">↓ Download library</button>
+      <div class="counts" id="status" aria-live="polite"></div>
+    </div>
+
+    <details class="drawer" id="drawer" open>
+      <summary>Inputs — model library &amp; consuming OpenAPI specs</summary>
+      <div class="io-grid">
+        <div class="io">
+          <h4>Model library <span class="muted">(YAML / JSON — <code>version</code> + <code>models[]</code>)</span>
+            <span class="io-btns"><button class="mini-btn" id="up-library" type="button">Upload</button></span>
+          </h4>
+          <textarea id="library-text" spellcheck="false" placeholder="Paste or author your versioned model library…"></textarea>
+          <input type="file" id="file-library" accept=".yaml,.yml,.json" hidden />
+        </div>
+        <div class="io">
+          <h4>Consuming specs <span class="muted">(one OpenAPI doc or an array)</span>
+            <span class="io-btns"><button class="mini-btn" id="up-specs" type="button">Upload</button></span>
+          </h4>
+          <textarea id="specs-text" spellcheck="false" placeholder="Paste the OpenAPI spec(s) that $ref your models…"></textarea>
+          <input type="file" id="file-specs" accept=".yaml,.yml,.json" hidden />
+        </div>
+      </div>
+    </details>
+
+    <main class="stage">
+      <section id="report"><div class="loading" id="loading">Loading…</div></section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
