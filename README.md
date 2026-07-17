@@ -4,13 +4,6 @@ A browser-first tool for a **versioned, reusable model / component library** —
 
 Linters check one document at a time. They cannot tell you that forty APIs each define their own slightly-different `User`, or that bumping the shared `Money` model quietly breaks the three services that consume it. The missing capability is a place for the **models themselves** to live, version, and be reused — so specs `$ref` a canonical definition instead of copying it.
 
-Part of the [API Commons](https://apicommons.org/tools/) tools, alongside
-[Governance Coverage](https://github.com/api-commons/governance-coverage),
-[Governance Waivers](https://github.com/api-commons/governance-waivers),
-[API Validator](https://github.com/api-commons/api-validator),
-[API Governance Graph](https://github.com/api-commons/api-governance-graph), and
-[Spectral Ruleset Studio](https://github.com/api-commons/spectral-ruleset-studio).
-
 ## The library
 
 A model library is a small, machine-readable file — a version plus a list of reusable named
@@ -76,3 +69,15 @@ A project of [API Evangelist](https://apievangelist.com), maintained openly unde
 [API Commons](https://apicommons.org). Free to fork; API Evangelist offers expert API design
 and governance services — including standing up a real shared model library — when you want
 help. Apache-2.0.
+
+## Part of API Commons
+
+An open, browser-first tool from **[API Commons](https://apicommons.org)** — free, no backend, your data stays in your browser. Browse the full set at **[apicommons.org/tools](https://apicommons.org/tools/)**.
+
+**Related tools**
+- [Spec Review](https://review.apicommons.org) — ref-resolving breaking-change diff for PRs
+- [API Validator](https://validator.apicommons.org) — lint OpenAPI/AsyncAPI/Arazzo/JSON Schema in-browser
+- [Code-First Governance](https://codefirst.apicommons.org) — govern generated specs; fix findings in code
+- [API Governance Graph](https://graph.apicommons.org) — bind building blocks into one graph + Gaps view
+- [Spectral Ruleset Studio](https://studio.apicommons.org) — turn a style guide into an owned ruleset
+- [API Reusability](https://reusability.apicommons.org) — score API reuse across an org
