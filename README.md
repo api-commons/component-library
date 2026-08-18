@@ -81,3 +81,10 @@ An open, browser-first tool from **[API Commons](https://apicommons.org)** — f
 - [API Governance Graph](https://graph.apicommons.org) — bind building blocks into one graph + Gaps view
 - [Spectral Ruleset Studio](https://studio.apicommons.org) — turn a style guide into an owned ruleset
 - [API Reusability](https://reusability.apicommons.org) — score API reuse across an org
+
+## License
+
+**[Apache-2.0](LICENSE).**
+
+API Commons licenses **code** under Apache-2.0 and **artifacts** — schemas, rulesets,
+examples and API descriptions — under CC BY-NC-SA 4.0.
